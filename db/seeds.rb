@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ @tipo = ["chinese", "italian", "japanese", "french", "belgian"]
+
+15.times do
+  Restaurant.create!(name: Faker::Restaurant.name,
+  address: Faker::Address.full_address,
+  phone_number: Faker::PhoneNumber.phone_number,
+  category: @tipo[rand(0..4)]
+  )
+end
